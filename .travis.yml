@@ -1,0 +1,16 @@
+language: java
+
+jdk:
+ - oraclejdk8
+ - oraclejdk9
+ - openjdk8
+ - openjdk9
+ - openjdk10
+ - openjdk11
+
+script:
+ - gradle test
+ - gradle test jacocoTestReport
+
+after_success:
+ - bash <(curl -s https://codecov.io/bash)
